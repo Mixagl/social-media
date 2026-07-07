@@ -1,7 +1,7 @@
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/prisma";
-import UserHeader from "@/modules/profile/components/UserHeader";
-import UserPosts from "@/modules/profile/components/UserPosts";
+import UserHeader from "@/components/UserHeader";
+import UserPosts from "@/components/UserPosts";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -20,7 +20,7 @@ export default async function Page() {
     },
     where: {
       authorId: session.user.id,
-    }
+    },
   });
 
   return (

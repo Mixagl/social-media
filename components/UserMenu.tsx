@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "./ui/dropdown-menu";
 import { User } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 

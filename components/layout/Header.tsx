@@ -2,7 +2,7 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { Button } from "../ui/button";
-import UserMenu from "../shared/UserMenu";
+import UserMenu from "../UserMenu";
 
 export default async function Header() {
   const session = await auth.api.getSession({
