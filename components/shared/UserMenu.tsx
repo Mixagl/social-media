@@ -33,7 +33,7 @@ export default function UserMenu({ username }: Props) {
         className="w-48 rounded-xl border border-border/50 bg-background/80 backdrop-blur-lg p-1 shadow-2xl"
       >
         <DropdownMenuItem asChild>
-          <Link href={`/`}>Profile</Link>
+          <Link href={`/profile`}>Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link href={`/`}>Settings</Link>
