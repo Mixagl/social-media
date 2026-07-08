@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Post } from "@/app/generated/prisma/client";
+import PostCard from "./PostCard";
 
 interface UserPostsProps {
   posts: Post[];
@@ -18,7 +19,7 @@ export default function UserPosts({ posts, username }: UserPostsProps) {
               Not posts yet
             </p>
             <p className="text-[13px] text-muted-foreground tracking-tight">
-            Share your thoughts or projects
+              Share your thoughts or projects
             </p>
           </div>
 
@@ -42,44 +43,10 @@ export default function UserPosts({ posts, username }: UserPostsProps) {
         Posts ({posts.length})
       </h2>
 
-      <div className="divide-y divide-border/40">
-        {posts.map((post) => {
-          const formattedDate = new Date(post.createdAt).toLocaleDateString(
-            "en-US",
-            {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            },
-          );
-
-          return (
-            <article
-              key={post.id}
-              className="py-7 first:pt-0 last:pb-0 flex flex-col gap-2.5"
-            >
-              <div className="flex items-center gap-2 text-[12px] text-muted-foreground tracking-tight">
-                <span className="font-medium text-foreground/80">
-                  {username}
-                </span>
-                <span className="text-muted-foreground/30">•</span>
-                <time dateTime={post.createdAt.toISOString()}>
-                  {formattedDate}
-                </time>
-              </div>
-
-              <h3 className="text-[19px] font-semibold tracking-tight text-foreground/90 leading-snug hover:text-blue-600 transition-colors">
-                <Link href={`/posts/${post.id}`}>{post.title}</Link>
-              </h3>
-
-              {post.description && (
-                <p className="text-[14px] font-normal text-muted-foreground tracking-tight leading-relaxed">
-                  {post.description}
-                </p>
-              )}
-            </article>
-          );
-        })}
+      <div className="flex flex-col gap-5">
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} username={username} />
+        ))}
       </div>
     </div>
   );
