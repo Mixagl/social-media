@@ -1,16 +1,10 @@
 import Link from "next/link";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import prisma from "@/lib/prisma";
+import { Post } from "@/types";
 
 interface Props {
-  post: {
-    id: number;
-    title: string;
-    description: string | null;
-    content: string;
-    createdAt: Date;
-    authorId: string;
-  };
+  post: Post;
 }
 
 export default async function PostDetailPage({ post }: Props) {

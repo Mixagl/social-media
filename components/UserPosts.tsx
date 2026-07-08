@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Post } from "@/app/generated/prisma/client";
 import PostCard from "./PostCard";
+import { Post } from "@/types";
 
 interface UserPostsProps {
   posts: Post[];

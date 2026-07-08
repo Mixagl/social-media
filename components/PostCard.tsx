@@ -1,6 +1,6 @@
-import { Post } from "@/app/generated/prisma/client";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { Post } from "@/types";
 
 interface Props {
   post: Post;
